@@ -1,0 +1,30 @@
+
+<ion-header color="header">
+
+  <ion-navbar color="header">
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+  		<ion-item (click)="submit_contact()">
+    		<ion-icon name="leaf" item-left></ion-icon>
+      			Contact Us
+      	</ion-item>
+      	<ion-item (click)="feedback()">
+    		<ion-icon name="leaf" item-left></ion-icon>
+      			Feedback
+      	</ion-item>
+      	<ion-item (click)="about()">
+    		<ion-icon name="leaf" item-left></ion-icon>
+      			About
+      	</ion-item>
+
+	</ion-list>
+</ion-content>

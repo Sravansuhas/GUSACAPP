@@ -1,0 +1,29 @@
+
+<ion-header color="header">
+
+  <ion-navbar color="header">
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Feeds..</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addFeedback()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-list>
+  <ion-item *ngFor="let feedback of feedbacks | async">
+    <p>posted by:{{feedback.name}}</p>
+    <p>this app is:{{feedback.about_app}}</p>
+    <p>suggestion to app:{{feedback.suggestion}}</p>
+
+  </ion-item>
+</ion-list>
+</ion-content>

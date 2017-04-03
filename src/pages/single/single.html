@@ -1,0 +1,51 @@
+
+<ion-header color="header">
+
+  <ion-navbar color="header">
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+	<ion-card *ngFor="let data of datas">
+		<ion-item *ngFor="let author of data._embedded.author" color="primary">
+		<ion-avatar item-left>
+		<img src="{{author.avatar_urls['24']}}"/>
+		</ion-avatar>
+		<h2>
+
+		{{author.name}}
+		</h2>
+		<p>{{data.date|date:'dd/MM/yyyy'}}</p>
+		</ion-item>
+
+		<div *ngFor="let thumbnail of data._embedded['wp:featuredmedia']">
+		<img src="{{thumbnail.media_details.sizes.full.source_url}}" *ngIf="thumbnail.source_url"/>
+		</div>
+
+		<ion-card-content>
+		<ion-card-title>{{data.title.rendered}}</ion-card-title>
+		<div [innerHTML]="data.content.rendered">
+		{{data.content.rendered}}
+		</div>
+
+		
+
+		
+
+
+		</ion-card-content>
+
+				<ion-item  (click)="launch(data.x_metadata.form_url)" *ngIf="data.x_metadata.form_url" color="primary" center>
+	Register
+		</ion-item>
+</ion-card>
+
+
+	
+</ion-content>

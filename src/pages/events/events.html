@@ -1,0 +1,45 @@
+
+<ion-header color="header">
+
+  <ion-navbar color="header">
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Events</ion-title>
+    <ion-buttons end>
+    	<button ion-button icon-only (click)="addEvent()">
+    		<ion-icon name="add"></ion-icon>
+    	</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+<ion-list>
+  <ion-item-sliding *ngFor="let event of events | async">
+      <ion-item>
+        <p>Tile of event{{event.title}}</p>
+        <p>Posted by:{{event.postedby}}</p>
+        <p>event date:{{event.date}}</p>
+        <p>event price:{{event.price}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="secondary" (click)="editEvent(event)">
+            <ion-icon name="md-create">Edit</ion-icon>
+        </button>
+      </ion-item-options>
+       <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="deleteEvent(event.$key)">
+            <ion-icon name="md-trash">Delete</ion-icon>
+        </button>
+      </ion-item-options>
+  </ion-item-sliding>
+
+</ion-list>
+</ion-content>

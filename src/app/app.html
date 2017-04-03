@@ -1,0 +1,54 @@
+<ion-menu [content]="content" class="menu">
+
+
+  <ion-content>
+    <ion-list no-lines>
+      
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[0])" (click)="openPage(pages[0])">
+    {{pages[0].title}}
+    </button>
+   
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[2])" (click)="openPage(pages[2])">
+    {{pages[2].title}}
+    </button>
+   
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[4])" (click)="openPage(pages[4])">
+    {{pages[4].title}}
+    </button>
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[5])" (click)="openPage(pages[5])">
+    {{pages[5].title}}
+    </button>
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[6])" (click)="openPage(pages[6])">
+    {{pages[6].title}}
+    </button>
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[7])" (click)="openPage(pages[7])">
+    {{pages[7].title}}
+    </button>
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[8])" (click)="openPage(pages[8])">
+    {{pages[8].title}}
+    </button>
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[9])" (click)="openPage(pages[9])">
+    {{pages[9].title}}
+    </button>
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[10])" (click)="openPage(pages[10])">
+    {{pages[10].title}}
+    </button>
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[11])" (click)="openPage(pages[11])">
+    {{pages[11].title}}
+    </button>
+     <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[12])" (click)="openPage(pages[12])">
+    {{pages[12].title}}
+    </button>
+    <button menuClose ion-item  [class.activeHighLight]="checkActive(pages[13])" (click)="openPage(pages[13])">
+    {{pages[13].title}}
+    </button>
+    </ion-list>
+	
+	
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+ 

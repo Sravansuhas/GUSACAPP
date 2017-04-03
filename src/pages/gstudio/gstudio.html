@@ -1,0 +1,63 @@
+<ion-header color="header">
+  <ion-navbar color="header">
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      
+    </ion-title>
+    <ion-searchbar
+  		[(ngModel)]="searchKeyword"
+  		(keyup.enter)="search(searchKeyword,$event)"
+  		
+  		(ionInput)="onCencel($event)"
+  	placeholder="search for some content" color="primary">
+  	</ion-searchbar>
+  </ion-navbar>
+
+  	
+
+</ion-header>
+
+<ion-content class="colorful">
+
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content
+		pullicon="arrow-dropdown"
+		pullingtext="pull to refresh"
+		refreshingSpinner="cirles"
+		refreshingText="refreshing.."
+			>
+		</ion-refresher-content>
+	</ion-refresher>
+
+
+	<ion-card  *ngFor="let data of datas">
+		<ion-item color="primary">
+		
+		<p>{{data.date|date:'dd/MM/yyyy'}}</p>
+		
+		</ion-item>
+
+		
+
+		<ion-card-content>
+		<ion-card-title>{{data.title.rendered}}</ion-card-title>
+		<div [innerHTML]="data.excerpt.rendered">
+		{{data.excerpt.rendered}}
+		</div>
+		</ion-card-content>
+
+		<ion-item (click)="openSinglePage(data._links.self[0].href)" color="primary">
+		Read More .. 
+		</ion-item>
+
+	</ion-card>
+
+	
+
+	<ion-infinite-scroll (ionInfinite)="infiniteScroll($event)">
+	<ion-infinite-scroll-content>
+	</ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>

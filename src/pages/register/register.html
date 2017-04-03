@@ -1,0 +1,37 @@
+
+<ion-header color="header">
+
+  <ion-navbar color="header">
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Register here :)</ion-title>
+  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+<ion-list>
+  
+      <ion-item *ngFor="let event of events | async" (click)="registerEvent()" color="items" class="list_item">
+         
+         <h1>EVENT | <span color="header">{{event.title}}</span></h1>
+         <p>HOSTED BY  | <span color="header">{{event.postedby}}</span></p>
+        
+       
+        <div item-right>
+        <p> <ion-icon name="calendar"></ion-icon> DATE | <span color="header">{{event.date}} </span>
+
+        </p>
+         <p> <ion-icon name="pricetag"></ion-icon> PRICE | <span color="header">{{event.price}} </span></p>
+        </div>
+            
+      </ion-item>
+
+     
+
+</ion-list>
+</ion-content>

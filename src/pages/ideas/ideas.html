@@ -1,0 +1,33 @@
+
+<ion-header color="header">
+
+  <ion-navbar color="header">
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ideas   <ion-icon name="bulb"></ion-icon></ion-title>
+    <ion-buttons end color="primary">
+      <button ion-button icon-only (click)="addIdea()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-list>
+	<ion-item *ngFor="let idea of ideas | async">
+		<p>Tile of Idea : {{idea.title}}</p>
+		<p>Posted by: {{idea.postedby}}</p>
+		<ion-item text-wrap >
+		<p>Content of idea: {{idea.content}}</p>
+		</ion-item>
+		<p>contact: {{idea.mail}}</p>
+	</ion-item>
+</ion-list>
+
+
+</ion-content>
